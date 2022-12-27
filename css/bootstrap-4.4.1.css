@@ -4354,11 +4354,11 @@ input[type="button"].btn-block {
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
   margin-right: 1rem;
-	margin-left: 12rem;
+	margin-left: 5rem;
   font-size: 1.25rem;
   line-height: inherit;
   white-space: nowrap;
-  width:10%;
+  width:12%;
 }
 
 .navbar-brand:hover, .navbar-brand:focus {
