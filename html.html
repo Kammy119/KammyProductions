@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KammyProductions: Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="header">
+         <div class="logo">
+            <a href="index.html">KammyProductions</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Solutions.html">Solutions</a></li>
+                <li><a href="Vision.html">Vision</a></li>
+                <li><a href="Programs.html">Programs</a></li>
+                <li><a href="Blog.html">Blog</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <a href="#" class="cta-button">Get Started</a>
+        </div>
+    </header>
+    <main>
+        <section class="banner">
+            <h1>The New Standard in Data Analysis</h1>
+            <p>Use Data to Get a 360-Degree View of Your Business</p>
+            <a href="Solutions.html" class="learn-more">Learn More</a>
+        </section>
+        <section class="content">
+            <div class="text-content">
+                <h2>Let Your Data Elevate Your Business to New Heights</h2>
+                <p>In today’s data-driven world, harnessing the power of your data is essential for gaining a competitive edge. Our solutions are designed to provide comprehensive insights and actionable intelligence, enabling you to make informed decisions and drive your business forward.</p>
+                <p>Leverage our advanced analytics tools to uncover hidden opportunities and optimize your operations. Our expertise in data science and application versatility ensures that you get the most out of your data, no matter your industry or business size.</p>
+                <p>With a focus on security and customer experience, we offer robust solutions that not only protect your data but also enhance customer satisfaction. Join the ranks of leading businesses that trust us to transform their data into a strategic asset.</p>
+            </div>
+            <div class="services">
+                <div class="service-card">
+                    <div class="icon">☁️</div>
+                    <h3>Cloud Analytics Modernization</h3>
+                    <p>Leverage our cloud analytics to modernize your data infrastructure and enhance your decision-making processes.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">📊</div>
+                    <h3>Data Science Acceleration</h3>
+                    <p>Accelerate your data science initiatives with our cutting-edge tools and expert guidance, tailored to your needs.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🔧</div>
+                    <h3>Versatility in Application</h3>
+                    <p>Our versatile applications are designed to adapt to various industries, providing customized solutions for your business.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">👥</div>
+                    <h3>Full Customer Experience Service</h3>
+                    <p>Enhance customer satisfaction with our comprehensive customer experience services, tailored to meet your unique needs.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🔒</div>
+                    <h3>Advanced Data Security</h3>
+                    <p>Protect your valuable data with our advanced security measures, ensuring your business remains secure and compliant.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">💡</div>
+                    <h3>Innovative Data Solutions</h3>
+                    <p>Discover innovative data solutions that drive growth and efficiency, keeping you ahead of the competition.</p>
+                </div>
+            </div>
+        </section>
+        <section class="partners">
+            <h2>Our Partners</h2>
+            <div class="partners-logos">
+                <div class="partner-card">
+                    <p>Partner 1</p>
+                </div>
+                <div class="partner-card">
+                    <p>Partner 2</p>
+                </div>
+                <div class="partner-card">
+                    <p>Partner 3</p>
+                </div>
+                <div class="partner-card">
+                    <p>Partner 4</p>
+                </div>
+            </div>
+        </section>
+        <section class="cta-section">
+            <h2>Are You Ready to Accelerate Your Business?</h2>
+            <p>I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click "Edit Text" or double click me to add your own content and make changes to the font.</p>
+            <a href="#" class="cta-button">Get Started</a>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-info">
+            <p>VISTA.IO</p>
+            <p>123-456-7890</p>
+            <p>info@mysite.com</p>
+            <p>500 Terry Francine St</p>
+            <p>San Francisco, CA 94158</p>
+        </div>
+        <ul>
+            <li><a href="Solutions.html">Solutions</a></li>
+            <li><a href="Vision.html">Vision</a></li>
+            <li><a href="Programs.html">Programs</a></li>
+            <li><a href="Blog.html">Blog</a></li>
+        </ul>
+        <div class="social-media">
+            <a href="#">LinkedIn</a>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("scroll", function() {
+            const header = document.getElementById("header");
+            const navLinks = document.querySelectorAll("nav ul li a");
+            const ctaButton = document.querySelector(".auth-buttons .cta-button");
+
+            if (window.scrollY > 100) {
+                header.classList.add("hidden");
+                navLinks.forEach(link => link.classList.add("hidden-link"));
+                ctaButton.classList.add("hidden-link");
+            } else {
+                header.classList.remove("hidden");
+                navLinks.forEach(link => link.classList.remove("hidden-link"));
+                ctaButton.classList.remove("hidden-link");
+            }
+        });
+
+        // Function to check if an element is in the viewport
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // Function to add visible class to service cards
+        function addVisibleClass() {
+            const cards = document.querySelectorAll('.service-card');
+            cards.forEach(card => {
+                if (isElementInViewport(card)) {
+                    card.classList.add('visible');
+                }
+            });
+        }
+
+        // Listen for scroll events and trigger the function
+        window.addEventListener('scroll', addVisibleClass);
+        window.addEventListener('resize', addVisibleClass);
+
+        // Trigger the function once on load
+        addVisibleClass();
+    </script>
+</body>
+</html>
